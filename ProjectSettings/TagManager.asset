@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ZombieHealth
+  - Enemy
+  - PlayerHealth
+  - RocketMissile
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Road
+    uniqueID: 3400803773
+    locked: 0
+  - name: Wall
+    uniqueID: 2240981919
+    locked: 0
+  - name: Move
+    uniqueID: 860623045
+    locked: 0
+  - name: Player
+    uniqueID: 2298522479
+    locked: 0
+  - name: FX
+    uniqueID: 2574088077
+    locked: 0
+  - name: UI
+    uniqueID: 2062418667
     locked: 0
