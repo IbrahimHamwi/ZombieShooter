@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D myBody;
     private float moveForce_X = 1.5f, moveForce_Y = 1.5f;
     private PlayerAnimations playerAnimation;
+
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
