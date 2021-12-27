@@ -4947,3 +4947,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246864f8eecaa8c41a59723fb4e14490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  rocket_Explosion: {fileID: 1777957916110860, guid: b1038453f36cc41c584473fd83977860, type: 3}
