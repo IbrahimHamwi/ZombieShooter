@@ -9,7 +9,7 @@ public class TagManager
     public static string BACKGROUND_TAG = "Background";
     public static string BULLET_TAG = "Bullet";
     public static string FENCE_TAG = "Fence";
-    public static string ROCKET_MISSLE = "RocketMissle";
+    public static string ROCKET_MISSLE_TAG = "RocketMissile";
     public static string FIRE_BULLET_TAG = "FireBullet";
     public static string ZOMBIE_HEALTH_TAG = "Zombie Health";
     public static string MELEE_WEAPON_TAG = "MeleeWeapon";
