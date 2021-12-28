@@ -44,6 +44,7 @@ public class WeaponController : MonoBehaviour
             }
             else
             {
+                print("no ammo in WeaponController");
                 //play no ammo sound
             }
 

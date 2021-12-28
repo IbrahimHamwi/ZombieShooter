@@ -15,6 +15,7 @@ public class WeaponManager : MonoBehaviour
     private PlayerArmController[] armController;
     private PlayerAnimations playerAnim;
     private bool isShooting;
+    public GameObject meleeDamagePoint;
 
     void Awake()
     {
@@ -91,5 +92,13 @@ public class WeaponManager : MonoBehaviour
     public void ResetAttack()
     {
         isShooting = false;
+    }
+    void AllowCollisionDetection()
+    {
+        meleeDamagePoint.SetActive(true);
+    }
+    void DenyCollisionDetection()
+    {
+        meleeDamagePoint.SetActive(false);
     }
 }

@@ -305,10 +305,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tommy
       objectReference: {fileID: 0}
-    - target: {fileID: 1940654426450688, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4668976323760658, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -353,6 +349,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 121256661281475740, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
+      propertyPath: bulletMax
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 121256661281475740, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
+      propertyPath: currentBullet
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 121256661281475740, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
+      propertyPath: defaultConfig.fireRate
+      value: 0.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3fcef42f4bb6a04a9df1a31e6aff465, type: 3}
 --- !u!1001 &6079778448812035375
@@ -365,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 184972, guid: 13c9a6f4002c04238b8cb1551b68a561, type: 3}
       propertyPath: m_Name
       value: BigZombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 184972, guid: 13c9a6f4002c04238b8cb1551b68a561, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 463194, guid: 13c9a6f4002c04238b8cb1551b68a561, type: 3}
       propertyPath: m_RootOrder
