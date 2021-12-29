@@ -34,6 +34,10 @@ public class GunWeaponController : WeaponController
                 SmartPool.instance.CreateRocket(bulletPrefab, 100);
             }
         }
+        if (nameWp == NameWeapon.FIRE)
+        {
+            fireCollider = spawnPoint.GetComponent<BoxCollider2D>();
+        }
     }
 
     public override void ProcessAttack()
@@ -88,8 +92,8 @@ public class GunWeaponController : WeaponController
     IEnumerator ActiveFireCollide()
     {
         fx_Shot.Play();
-        // fireCollider.enabled = true;
+        fireCollider.enabled = true;
         yield return fire_ColliderWait;
-        // fireCollider.enabled = false;
+        fireCollider.enabled = false;
     }
 }

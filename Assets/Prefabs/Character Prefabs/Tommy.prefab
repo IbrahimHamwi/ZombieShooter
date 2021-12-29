@@ -1424,8 +1424,8 @@ MonoBehaviour:
     criticalRate: 0
   nameWp: 0
   gunIndex: -1
-  currentBullet: 0
-  bulletMax: 0
+  currentBullet: 999
+  bulletMax: 999
 --- !u!1 &4846140471377794891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,7 +2005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9017879642112839759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.548, y: 0.595, z: 0}
+  m_LocalPosition: {x: -0.517, y: 0.564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3306644805358451147}
@@ -2023,6 +2023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae9ad2acf49bba48a9f91883a8fcf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  radius: 3
+  damage: 3
 --- !u!1001 &25379270095180404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,6 +2129,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireGun Spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 783524061263981103, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 783524061263981103, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
+      propertyPath: m_TagString
+      value: FireBullet
+      objectReference: {fileID: 0}
     - target: {fileID: 783524062048600350, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
       propertyPath: m_Name
       value: Pistol Spawn
@@ -2205,6 +2218,11 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 584971200316564485, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
   m_PrefabInstance: {fileID: 1536911904545472384}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2273077289859945903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 783524061263981103, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
+  m_PrefabInstance: {fileID: 1536911904545472384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2273077289859945900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 783524061263981100, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
@@ -2225,6 +2243,32 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 584676726268905376, guid: 8aa3517c835932649aeb50c9d8bb55a6, type: 3}
   m_PrefabInstance: {fileID: 1536911904545472384}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &5989326919199498094
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273077289859945903}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.8, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.88, y: 0.38}
+  m_EdgeRadius: 0
 --- !u!1001 &6399610043593981351
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class ZombieController : MonoBehaviour
     public GameObject damage_Collider;
     public int zombieHealth = 10;
     public GameObject[] fxDead;
-    private float fireDamage = 10;
+    private int fireDamage = 10;
     public GameObject coinCollectable;
     void Start()
     {
@@ -53,6 +53,17 @@ public class ZombieController : MonoBehaviour
             fxDead[index].GetComponent<ParticleSystem>().Play();
         }
     }
+    public void DealDamage(int damage)
+    {
+        zombie_Animation.Hurt();
+        zombieHealth -= damage;
+        if (zombieHealth <= 0)
+        {
+            zombie_Alive = false;
+            zombie_Animation.Dead();
+            StartCoroutine(DeactivateZombie());
+        }
+    }
     IEnumerator DeactivateZombie()
     {
         yield return new WaitForSeconds(2f);
@@ -81,6 +92,17 @@ public class ZombieController : MonoBehaviour
                 StartCoroutine(DeactivateZombie());
             }
             target.gameObject.SetActive(false);
+        }
+        if (target.tag == TagManager.FIRE_BULLET_TAG)
+        {
+            zombie_Animation.Hurt();
+            zombieHealth -= fireDamage;
+            if (zombieHealth <= 0)
+            {
+                zombie_Alive = false;
+                zombie_Animation.Dead();
+                StartCoroutine(DeactivateZombie());
+            }
         }
     }
 

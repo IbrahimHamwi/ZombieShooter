@@ -11,7 +11,7 @@ public class TagManager
     public static string FENCE_TAG = "Fence";
     public static string ROCKET_MISSLE_TAG = "RocketMissile";
     public static string FIRE_BULLET_TAG = "FireBullet";
-    public static string ZOMBIE_HEALTH_TAG = "Zombie Health";
+    public static string ZOMBIE_HEALTH_TAG = "ZombieHealth";
     public static string MELEE_WEAPON_TAG = "MeleeWeapon";
     public static string COIN_TAG = "Coin";
 

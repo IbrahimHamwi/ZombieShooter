@@ -6,7 +6,7 @@ public class MeleeWeaponController : WeaponController
 {
     public override void ProcessAttack()
     {
-        print("ProcessAttack from MeleeWeaponController.cs");
+
         //base.ProcessAttack()
     }
 }
