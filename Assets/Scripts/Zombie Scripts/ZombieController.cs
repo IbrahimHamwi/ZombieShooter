@@ -20,8 +20,15 @@ public class ZombieController : MonoBehaviour
         zombie_Animation = GetComponent<ZombieAnimation>();
 
         zombie_Alive = true;
-
-        targetTransform = GameObject.FindGameObjectWithTag(TagManager.PLAYER_TAG).transform;
+        if (GameplayController.instance.zombieGoal == ZombieGoal.PLAYER)
+        {
+            targetTransform = GameObject.FindGameObjectWithTag(TagManager.PLAYER_TAG).transform;
+        }
+        else if (GameplayController.instance.zombieGoal == ZombieGoal.FENCE)
+        {
+            GameObject[] fences = GameObject.FindGameObjectsWithTag(TagManager.FENCE_TAG);
+            targetTransform = fences[Random.Range(0, fences.Length)].transform;
+        }
     }
 
     void Update()
@@ -63,6 +70,14 @@ public class ZombieController : MonoBehaviour
             zombie_Animation.Dead();
             StartCoroutine(DeactivateZombie());
         }
+    }
+    void ActivateDamagePoint()
+    {
+        damage_Collider.SetActive(true);
+    }
+    void DeactivateDamagePoint()
+    {
+        damage_Collider.SetActive(false);
     }
     IEnumerator DeactivateZombie()
     {
