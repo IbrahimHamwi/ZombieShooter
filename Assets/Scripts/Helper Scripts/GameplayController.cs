@@ -13,7 +13,7 @@ public class GameplayController : MonoBehaviour
     public static GameplayController instance;
 
     [HideInInspector] public bool bullet_And_BulletFX_Created, rocket_Bullet_Created;
-    [HideInInspector] public bool playerAlive;
+    [HideInInspector] public bool playerAlive, fenceDestroyed;
     public ZombieGoal zombieGoal = ZombieGoal.PLAYER;
 
     void Awake()

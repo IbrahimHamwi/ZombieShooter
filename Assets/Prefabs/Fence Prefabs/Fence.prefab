@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8165307496596120634}
   - component: {fileID: 8250865537235072535}
   - component: {fileID: 5346249730112560965}
+  - component: {fileID: 6205905604657258690}
   m_Layer: 9
   m_Name: Fence
   m_TagString: Fence
@@ -142,6 +143,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.73, y: 1.22}
   m_EdgeRadius: 0
+--- !u!114 &6205905604657258690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067825603930024130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23928607a1b176145b7ea0dcbf0b950b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3526897809219470162
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -249,6 +249,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1580660966 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6810325665004229188, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+  m_PrefabInstance: {fileID: 7898987637914809931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1701908648 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3617003440585949068, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+  m_PrefabInstance: {fileID: 7898987637914809931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1996122887
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +291,7 @@ MonoBehaviour:
   bullet_And_BulletFX_Created: 0
   rocket_Bullet_Created: 0
   playerAlive: 0
+  fenceDestroyed: 0
   zombieGoal: 1
 --- !u!4 &1996122889
 Transform:
@@ -421,10 +432,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3526758860003062864, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+      propertyPath: m_Name
+      value: FX_WoodBreak
+      objectReference: {fileID: 0}
     - target: {fileID: 5067825603930024130, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
       propertyPath: m_Name
       value: Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 6205905604657258690, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+      propertyPath: health
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205905604657258690, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+      propertyPath: wood_Break_FX
+      value: 
+      objectReference: {fileID: 1701908648}
+    - target: {fileID: 6205905604657258690, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
+      propertyPath: wood_Explode_FX
+      value: 
+      objectReference: {fileID: 1580660966}
     - target: {fileID: 8165307496596120634, guid: f4603f0bc2ffd1a4abbabee0e63f3c02, type: 3}
       propertyPath: m_RootOrder
       value: 5

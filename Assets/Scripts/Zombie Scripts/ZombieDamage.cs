@@ -11,8 +11,14 @@ public class ZombieDamage : MonoBehaviour
 
     void Update()
     {
-        AttackPlayer();
-        AttackFence();
+        if (GameplayController.instance.zombieGoal == ZombieGoal.PLAYER)
+        {
+            AttackPlayer();
+        }
+        if (GameplayController.instance.zombieGoal == ZombieGoal.FENCE)
+        {
+            AttackFence();
+        }
     }
     void AttackPlayer()
     {
@@ -30,10 +36,13 @@ public class ZombieDamage : MonoBehaviour
     }
     void AttackFence()
     {
-        Collider2D target = Physics2D.OverlapCircle(transform.position, radius, collisionLayer);
-        if (target.tag == TagManager.FENCE_TAG)
+        if (!GameplayController.instance.fenceDestroyed)
         {
-            print("FENCE ATTACKED");
+            Collider2D target = Physics2D.OverlapCircle(transform.position, radius, collisionLayer);
+            if (target.tag == TagManager.FENCE_TAG)
+            {
+                target.GetComponent<FenceHealth>().DealDamage(damage);
+            }
         }
     }
 }
