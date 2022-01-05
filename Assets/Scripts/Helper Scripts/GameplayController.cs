@@ -7,6 +7,14 @@ public enum ZombieGoal
     PLAYER,
     FENCE
 }
+public enum GameGoal
+{
+    KILL_ZOMBIES,
+    WALK_TO_GOAL_STEPS,
+    DEFEND_FENCE,
+    TIMER, COUNTDOWN,
+    GAME_OVER
+}
 
 public class GameplayController : MonoBehaviour
 {
@@ -15,6 +23,7 @@ public class GameplayController : MonoBehaviour
     [HideInInspector] public bool bullet_And_BulletFX_Created, rocket_Bullet_Created;
     [HideInInspector] public bool playerAlive, fenceDestroyed;
     public ZombieGoal zombieGoal = ZombieGoal.PLAYER;
+    public GameGoal gameGoal = GameGoal.DEFEND_FENCE;
 
     void Awake()
     {
