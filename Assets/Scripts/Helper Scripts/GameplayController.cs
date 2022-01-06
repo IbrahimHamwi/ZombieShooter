@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum ZombieGoal
 {
@@ -87,6 +88,7 @@ public class GameplayController : MonoBehaviour
         Vector3 playerCurrentMovement = playerTarget.position;
         float dist = Vector3.Distance(new Vector3(playerCurrentMovement.x, 0f, 0f)
                                     , new Vector3(player_Previous_Position.x, 0f, 0f));
+        //player moving forward
         if (playerCurrentMovement.x > player_Previous_Position.x)
         {
             if (dist > 1)
@@ -99,6 +101,7 @@ public class GameplayController : MonoBehaviour
                 player_Previous_Position = playerTarget.position;
             }
         }
+        //player moving backwards
         else if (playerCurrentMovement.x < player_Previous_Position.x)
         {
             if (dist > 0.8f)
@@ -153,5 +156,9 @@ public class GameplayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+    }
+    public void QuitGame()
+    {
+        SceneManager.LoadScene(TagManager.MAIN_MENU_NAME);
     }
 }
