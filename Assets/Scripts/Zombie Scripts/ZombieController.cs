@@ -82,6 +82,8 @@ public class ZombieController : MonoBehaviour
     IEnumerator DeactivateZombie()
     {
         yield return new WaitForSeconds(2f);
+
+        GameplayController.instance.ZombieDied();
         //Instantiate(coinCollectable, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }

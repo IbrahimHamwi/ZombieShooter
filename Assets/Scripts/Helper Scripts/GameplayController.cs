@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ZombieGoal
 {
@@ -12,7 +13,7 @@ public enum GameGoal
     KILL_ZOMBIES,
     WALK_TO_GOAL_STEPS,
     DEFEND_FENCE,
-    TIMER, COUNTDOWN,
+    TIMER_COUNTDOWN,
     GAME_OVER
 }
 
@@ -25,6 +26,20 @@ public class GameplayController : MonoBehaviour
     public ZombieGoal zombieGoal = ZombieGoal.PLAYER;
     public GameGoal gameGoal = GameGoal.DEFEND_FENCE;
 
+    public int zombie_Count = 20;
+    public int timer_Count = 100;
+
+    private Transform playerTarget;
+    private Vector3 player_Previous_Position;
+
+    public int step_Count = 100;
+    private int initial_Step_Count;
+
+    private Text zombieCounter_Text, timer_Text, stepCounter_Text;
+    private Image playerLife;
+    [HideInInspector] public int coinCount;
+    public GameObject pausePanel, gameOverPanel;
+
     void Awake()
     {
         MakeInstance();
@@ -32,17 +47,111 @@ public class GameplayController : MonoBehaviour
     private void Start()
     {
         playerAlive = true;
+
+        if (gameGoal == GameGoal.WALK_TO_GOAL_STEPS)
+        {
+            playerTarget = GameObject.FindGameObjectWithTag(TagManager.PLAYER_TAG).transform;
+            player_Previous_Position = playerTarget.position;
+
+            initial_Step_Count = step_Count;
+            stepCounter_Text = GameObject.Find("Step Counter").GetComponent<Text>();
+
+            stepCounter_Text.text = step_Count.ToString();
+        }
+        if (gameGoal == GameGoal.TIMER_COUNTDOWN || gameGoal == GameGoal.DEFEND_FENCE)
+        {
+            timer_Text = GameObject.Find("Timer Counter").GetComponent<Text>();
+            timer_Text.text = timer_Count.ToString();
+
+            InvokeRepeating("TimerCountDown", 0f, 1f);
+        }
+        if (gameGoal == GameGoal.KILL_ZOMBIES)
+        {
+            zombieCounter_Text = GameObject.Find("Zombie Counter").GetComponent<Text>();
+        }
+        playerLife = GameObject.Find("Life Full").GetComponent<Image>();
     }
     private void OnDisable()
     {
         instance = null;
     }
-
+    void Update()
+    {
+        if (gameGoal == GameGoal.WALK_TO_GOAL_STEPS)
+        {
+            CountPlayerMovement();
+        }
+    }
+    void CountPlayerMovement()
+    {
+        Vector3 playerCurrentMovement = playerTarget.position;
+        float dist = Vector3.Distance(new Vector3(playerCurrentMovement.x, 0f, 0f)
+                                    , new Vector3(player_Previous_Position.x, 0f, 0f));
+        if (playerCurrentMovement.x > player_Previous_Position.x)
+        {
+            if (dist > 1)
+            {
+                step_Count--;
+                if (step_Count <= 0)
+                {
+                    print("we made that many steps");
+                }
+                player_Previous_Position = playerTarget.position;
+            }
+        }
+        else if (playerCurrentMovement.x < player_Previous_Position.x)
+        {
+            if (dist > 0.8f)
+            {
+                step_Count++;
+                if (step_Count >= initial_Step_Count)
+                {
+                    step_Count = initial_Step_Count;
+                }
+                player_Previous_Position = playerTarget.position;
+            }
+        }
+        stepCounter_Text.text = step_Count.ToString();
+    }
     void MakeInstance()
     {
         if (instance == null)
         {
             instance = this;
         }
+    }
+    void TimerCountDown()
+    {
+        timer_Count--;
+        timer_Text.text = timer_Count.ToString();
+        if (timer_Count <= 0)
+        {
+            print("Game Over");
+            CancelInvoke("TimerCountDown");
+        }
+    }
+    public void ZombieDied()
+    {
+        zombie_Count--;
+        zombieCounter_Text.text = zombie_Count.ToString();
+        if (zombie_Count <= 0)
+        {
+            print("Game Over");
+        }
+    }
+    public void PlayerLifeCounter(float fillPercentage)
+    {
+        fillPercentage /= 100f;
+        playerLife.fillAmount = fillPercentage;
+    }
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
     }
 }
