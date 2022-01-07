@@ -34251,6 +34251,9 @@ GameObject:
   - component: {fileID: 9586278}
   - component: {fileID: 5060664}
   - component: {fileID: 6117422}
+  - component: {fileID: 1422787494}
+  - component: {fileID: 1422787495}
+  - component: {fileID: 1422787496}
   m_Layer: 9
   m_Name: BossZombie
   m_TagString: Enemy
@@ -34342,6 +34345,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.21}
   m_EdgeRadius: 0
+--- !u!114 &1422787494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebfcec3a6714e24685e84c070c7eb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1422787495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff88e19a7d459714fb6f9de609fdd7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage_Collider: {fileID: 1091640258440400}
+  zombieHealth: 10
+  fxDead:
+  - {fileID: 135430}
+  - {fileID: 112682}
+  - {fileID: 135430}
+  coinCollectable: {fileID: 0}
+--- !u!114 &1422787496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2603287d9828b4f8bec46778af9619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &159114
 GameObject:
   m_ObjectHideFlags: 0
@@ -49498,6 +49544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4478085470679660}
+  - component: {fileID: 557071118}
   m_Layer: 0
   m_Name: Damage Point
   m_TagString: Untagged
@@ -49519,6 +49566,23 @@ Transform:
   m_Father: {fileID: 448674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557071118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091640258440400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45b099e289e8ad46ba26ce14004e20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  radius: 1
+  damage: 3
 --- !u!1 &1230294659409060
 GameObject:
   m_ObjectHideFlags: 0

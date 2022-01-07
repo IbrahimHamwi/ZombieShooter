@@ -9883,6 +9883,9 @@ GameObject:
   - component: {fileID: 9529898}
   - component: {fileID: 5080764}
   - component: {fileID: 6173938}
+  - component: {fileID: 8467178457817638162}
+  - component: {fileID: 1193178377512705746}
+  - component: {fileID: 6882206045693434104}
   m_Layer: 9
   m_Name: GunZombie
   m_TagString: Enemy
@@ -9974,6 +9977,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.1866486}
   m_EdgeRadius: 0
+--- !u!114 &8467178457817638162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2603287d9828b4f8bec46778af9619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1193178377512705746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff88e19a7d459714fb6f9de609fdd7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage_Collider: {fileID: 1275077960370694}
+  zombieHealth: 10
+  fxDead:
+  - {fileID: 198660}
+  - {fileID: 113326}
+  - {fileID: 198660}
+  coinCollectable: {fileID: 0}
+--- !u!114 &6882206045693434104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebfcec3a6714e24685e84c070c7eb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122300
 GameObject:
   m_ObjectHideFlags: 0
@@ -49612,6 +49658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4566851284047718}
+  - component: {fileID: 614985663696305974}
   m_Layer: 0
   m_Name: Damage Point
   m_TagString: Untagged
@@ -49633,6 +49680,23 @@ Transform:
   m_Father: {fileID: 419550}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &614985663696305974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275077960370694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45b099e289e8ad46ba26ce14004e20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  radius: 1
+  damage: 3
 --- !u!1 &1551234825296340
 GameObject:
   m_ObjectHideFlags: 0

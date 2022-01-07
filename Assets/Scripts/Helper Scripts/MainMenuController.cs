@@ -23,6 +23,14 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene(TagManager.LEVEL_4_NAME);
     }
+    public void SelectTommy()
+    {
+        GameManager.instance.character_Index = 0;
+    }
+    public void SelectMarry()
+    {
+        GameManager.instance.character_Index = 1;
+    }
     public void OpenCharacterSelectPanel()
     {
         characterSelectPanel.SetActive(true);
