@@ -8,5 +8,7 @@ public class MeleeWeaponController : WeaponController
     {
 
         //base.ProcessAttack()
+        AudioManager.instance.MeleeAttackSound();
+
     }
 }

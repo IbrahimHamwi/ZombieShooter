@@ -12,6 +12,7 @@ public class ZombieController : MonoBehaviour
     public GameObject damage_Collider;
     public int zombieHealth = 10;
     public GameObject[] fxDead;
+    private float timerAttack;
     private int fireDamage = 10;
     public GameObject coinCollectable;
     void Start()
@@ -49,6 +50,13 @@ public class ZombieController : MonoBehaviour
             if (canAttack)
             {
                 zombie_Animation.Attack();
+
+                timerAttack += Time.deltaTime;
+                if (timerAttack > 0.45f)
+                {
+                    timerAttack = 0f;
+                    AudioManager.instance.ZombieAttackSound();
+                }
             }
         }
     }
@@ -81,10 +89,14 @@ public class ZombieController : MonoBehaviour
     }
     IEnumerator DeactivateZombie()
     {
+        AudioManager.instance.ZombieDieSound();
         yield return new WaitForSeconds(2f);
 
         GameplayController.instance.ZombieDied();
-        //Instantiate(coinCollectable, transform.position, Quaternion.identity);
+        if (Random.Range(0, 10) > 6)
+        {
+            Instantiate(coinCollectable, transform.position, Quaternion.identity);
+        }
         gameObject.SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D target)

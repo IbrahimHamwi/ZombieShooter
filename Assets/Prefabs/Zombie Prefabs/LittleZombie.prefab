@@ -9859,7 +9859,7 @@ MonoBehaviour:
   - {fileID: 1294077092398870}
   - {fileID: 1240282190124786}
   - {fileID: 1294077092398870}
-  coinCollectable: {fileID: 0}
+  coinCollectable: {fileID: 2620045197665490105, guid: 123b642d056c388449dffd2fad173009, type: 3}
 --- !u!114 &4288556696607485031
 MonoBehaviour:
   m_ObjectHideFlags: 0

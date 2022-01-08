@@ -41,7 +41,12 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name != TagManager.MAIN_MENU_NAME)
         {
-
+            if (character_Index != 0)
+            {
+                GameObject tommy = GameObject.FindGameObjectWithTag(TagManager.PLAYER_TAG);
+                Instantiate(characters[character_Index], tommy.transform.position, Quaternion.identity);
+                tommy.SetActive(false);
+            }
         }
     }
 }

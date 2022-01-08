@@ -96,7 +96,7 @@ public class GameplayController : MonoBehaviour
                 step_Count--;
                 if (step_Count <= 0)
                 {
-                    print("we made that many steps");
+                    GameOver();
                 }
                 player_Previous_Position = playerTarget.position;
             }
@@ -131,6 +131,7 @@ public class GameplayController : MonoBehaviour
         {
             print("Game Over");
             CancelInvoke("TimerCountDown");
+            GameOver();
         }
     }
     public void ZombieDied()
@@ -139,13 +140,18 @@ public class GameplayController : MonoBehaviour
         zombieCounter_Text.text = zombie_Count.ToString();
         if (zombie_Count <= 0)
         {
-            print("Game Over");
+            GameOver();
         }
     }
     public void PlayerLifeCounter(float fillPercentage)
     {
         fillPercentage /= 100f;
         playerLife.fillAmount = fillPercentage;
+    }
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void PauseGame()
     {
@@ -159,6 +165,7 @@ public class GameplayController : MonoBehaviour
     }
     public void QuitGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(TagManager.MAIN_MENU_NAME);
     }
 }

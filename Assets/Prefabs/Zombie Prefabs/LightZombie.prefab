@@ -170,7 +170,7 @@ MonoBehaviour:
   - {fileID: 131304}
   - {fileID: 166776}
   - {fileID: 131304}
-  coinCollectable: {fileID: 0}
+  coinCollectable: {fileID: 2620045197665490105, guid: 123b642d056c388449dffd2fad173009, type: 3}
 --- !u!114 &1789075325463562883
 MonoBehaviour:
   m_ObjectHideFlags: 0

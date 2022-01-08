@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
             playerAnim.Dead();
 
             blood_FX[Random.Range(0, blood_FX.Length)].SetActive(true);
+            GameplayController.instance.GameOver();
         }
     }
 }//class
